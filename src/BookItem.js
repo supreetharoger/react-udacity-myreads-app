@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 
 class BookItem extends Component {
+  state = {
+    value: ''
+  }
+
+  handleChange = (event, book, updateBook) => {
+    console.log("SUP", book)
+    updateBook(book, event)
+  }
+
   render() {
-    const { book } = this.props
+    const { book, updateBook } = this.props
     return (
       	
       		<li key={book.id}>
@@ -13,10 +22,11 @@ class BookItem extends Component {
                                                     height: 193,
                                                     backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
 										<div className="book-shelf-changer">
-											<select>
+											<select value={this.state.value} onChange={(event) => this.handleChange(event.target.value, book, updateBook)}>
 												<option value="move" disabled>Move to</option>
 												<option value="currentlyReading">Currently Reading</option>
 												<option value="wantToRead">Want To Read</option>
+<option value="currentlyReading">Currently Reading</option>
 												<option value="read">Read</option>
 												<option value="none">None</option>
 											</select>
