@@ -7,12 +7,10 @@ class BookShelf extends Component {
     value: ''
   }
   handleChange = (event, book, updateBook) => {
-    console.log("SUP", book)
     updateBook(book, event)
   }
   render() {
     const { books, shelfname, name, updateBook } = this.props;
-    console.log(books)
     return (
       	<div className="bookshelf">
       				<h2 className="bookshelf-title">{name}</h2>

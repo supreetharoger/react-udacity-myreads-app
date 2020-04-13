@@ -4,9 +4,11 @@ import BookShelf from './BookShelf';
 import BookItem from './BookItem';
 
 class SearchBooks extends Component {
-  state = {
-    query: '',
-    books: []
+  constructor(props) {
+    super(props)
+    this.state = {
+    	query: ''
+  	}
   }
 
   updateQuery = (query) => {
@@ -15,16 +17,28 @@ class SearchBooks extends Component {
     }
   }
 
+  clearSearch = (query) => {
+    this.updateQuery('')
+  }
+
+ checkBookExistsInShelf = (books, book) => {
+   let e = books.filter((c) => {
+     return c.id === book.id
+   }).map(data => {
+     return data.shelf
+   })
+   return e
+  }
+
   render() {
-    const { searchBooksList, updateBook } = this.props
+    const { searchBooksList, updateBook, books } = this.props
 	if(searchBooksList  && (searchBooksList.length === undefined)) {
       searchBooksList.length = 0
     }
-	console.log(searchBooksList)
     return (
       <div className="search-books">
       	<div className="search-books-bar">
-      		<Link to="/" className="close-search">My Reads</Link>
+      		<Link to="/" onClick={this.clearSearch} className="close-search">My Reads</Link>
       		<div className="search-books-input-wrapper">
       			<input type="text" 
        					placeholder="Search by Title or Author"
@@ -38,8 +52,9 @@ class SearchBooks extends Component {
       				<div className="bookshelf-books">
       					<ol className="books-grid">
       					{searchBooksList && searchBooksList.length > 0 && searchBooksList.map((book) => (
-      								<BookItem key={book.id} book={book} updateBook={updateBook} />
+                         	 <BookItem key={book.id} book={book} existsInShelf={this.checkBookExistsInShelf(books, book)} updateBook={updateBook} />
 						))}
+
       					</ol>
       				</div>
       			</div>

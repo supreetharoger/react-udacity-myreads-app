@@ -164,7 +164,9 @@ body, .app {
   height: 100%;
   opacity: 0;
   cursor: pointer;
+  background-image: url('./icons/arrow-drop-down.svg');
 }
+
 
 /* book cover */
 
