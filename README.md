@@ -18,4 +18,4 @@ Each shelves contains number of books with an option to select a shelf for that 
 The main page also has a link to /search, a search page that allows you to find books to add to your library.
 
 ## App details
-[![Alt text]](https://youtu.be/5Hb-LXlmiKo)
+[![IMAGE ALT MY READS](http://img.youtube.com/vi/5Hb-LXlmiKo/0.jpg)](http://www.youtube.com/watch?v=5Hb-LXlmiKo)
