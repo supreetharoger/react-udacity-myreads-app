@@ -16,4 +16,6 @@ The main page has contains three categories called shelves -
 Each shelves contains number of books with an option to select a shelf for that book.Based on option selected, the book moves to the shelf. 
 
 The main page also has a link to /search, a search page that allows you to find books to add to your library.
-[![IMAGE ALT TEXT HERE])](https://youtu.be/5Hb-LXlmiKo)
+
+## App details
+[![Alt text]](https://youtu.be/5Hb-LXlmiKo)
