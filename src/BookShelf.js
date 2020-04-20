@@ -6,9 +6,11 @@ class BookShelf extends Component {
   state = {
     value: ''
   }
+
   handleChange = (event, book, updateBook) => {
     updateBook(book, event)
   }
+
   render() {
     const { books, shelfname, name, updateBook } = this.props;
     return (

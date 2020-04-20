@@ -21,8 +21,6 @@ class BooksApp extends React.Component {
         })
   }
 
-
-
   searchBooks = (query) => {
     	BooksAPI.search(query, 20)
     		.then((books) => {
