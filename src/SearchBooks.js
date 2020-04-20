@@ -48,7 +48,7 @@ class SearchBooks extends Component {
       	</div>
       	<div className="search-book-results">
 			<div className="bookshelf">
-      				<h2 className="bookshelf-title">{name}</h2>
+      				<h2 className="bookshelf-title">Search Books</h2>
       				<div className="bookshelf-books">
       					<ol className="books-grid">
       					{searchBooksList && searchBooksList.length > 0 && searchBooksList.map((book) => (

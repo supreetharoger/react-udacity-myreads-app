@@ -10,9 +10,9 @@ class BookItem extends Component {
 
   handleChange = (event, book, updateBook) => {
     updateBook(book, event)
-    this.setState(() => {
+    this.setState(() => ({
       value: event
-    })
+    }))
   }
 
   handleSubmit(event) {
